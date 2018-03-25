@@ -15,6 +15,7 @@ class Log
 
     // 文件日志的根目录.请确认php进程对此目录可写
     public $FILE_LOG_ROOT = '/home/logs/';
+    public static $LOG_PATH = '/home/logs';
 
     // 数据库日志配置
     public $db = array(

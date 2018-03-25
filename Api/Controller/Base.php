@@ -69,7 +69,7 @@ class Controller_Base extends JMViewController_WebManagementBase
             $message = $exception->getMessage();
         } else {
             if ($exception instanceof \Exception) {
-                \Util\Log::log($exception->getMessage(), "unmanned_shelf_exception");
+                \Util\Log::log($exception->getMessage(), "ridunshe");
                 $message = "服务异常，请稍后重试";
             } else {
                 // 其他异常信息用默认提示语.
