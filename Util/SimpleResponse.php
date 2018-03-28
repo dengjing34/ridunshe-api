@@ -77,6 +77,11 @@ class SimpleResponse
 
         header("http/1.0 $httpCode");
         header("Content-type: application/json;charset=utf-8");
+//        header('Access-Control-Allow-Origin: http://www.ridunshe.com');
+//        header("Access-Control-Allow-Credentials: true");
+//        header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
+//        header('Access-Control-Max-Age: 1000');
+//        header('Access-Control-Allow-Headers: Content-Type, Content-Range, Content-Disposition, Content-Description');
         echo json_encode($res, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE);
     }
 

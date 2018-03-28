@@ -52,6 +52,7 @@ class Controller_Index extends Controller_Base
             $worksCategory = array_merge($worksCategory, $category);
         }
         $menu[] = array('name' => '作品', 'ename' => 'WORKS', 'link' => 'works', 'children' => $worksCategory);
+        $menu[] = array('name' => '新闻', 'ename' => 'NEWS', 'link' => 'news');
         $pages = \Model\Ridunshe\Pages::instance()->queryAllBase(array('status' => 1), 'name,english_name as ename', $op);
         if (!empty($pages)) {
             foreach ($pages as $k => $page) {
