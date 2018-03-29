@@ -36,7 +36,7 @@ class Controller_News extends Controller_Base
         $data = \Model\Ridunshe\News::instance()->queryPageBase($condition, 'id,title,intro,pic,created_time', $page, $pageSize, $op);
         foreach ($data['rows'] as &$each) {
             $each['pic'] = \Config\StaticFile::staticUrl($each['pic']);
-            $each['created_time'] = date('Y-m-d H:i:s', $each['created_time']);
+            $each['created_time'] = date('M d, Y', $each['created_time']);
         }
         unset($each);
         $this->responseSuccess($data);
