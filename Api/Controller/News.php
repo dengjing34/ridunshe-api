@@ -16,7 +16,7 @@ class Controller_News extends Controller_Base
                 throw new \RpcBusinessException('新闻不存在');
             }
             $row['pic'] = \Config\StaticFile::staticUrl($row['pic']);
-            $row['created_time'] = date('Y-m-d H:i:s', $row['created_time']);
+            $row['created_time'] = date('M d, Y', $row['created_time']);
             $row['content'] = \Config\StaticFile::replaceUrl($row['content']);
             $this->responseSuccess($row);
         } catch (Exception $e) {
