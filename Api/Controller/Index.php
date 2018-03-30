@@ -57,7 +57,7 @@ class Controller_Index extends Controller_Base
         if (!empty($pages)) {
             foreach ($pages as $k => $page) {
                 $pages[$k]['link'] = $page['ename'];
-                if (in_array($page['name'], array('contact', 'about'))) {
+                if (in_array($page['ename'], array('contact', 'about'))) {
                     $pages[$k]['link'] .= 'us';
                 }
                 $pages[$k]['ename'] = strtoupper($page['ename']);
