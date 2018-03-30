@@ -11,6 +11,9 @@ class Controller_Pages extends Controller_Base
             if (empty($englishName)) {
                 throw new \RpcBusinessException('无效的页面');
             }
+            if (in_array($englishName, array('about', 'contact'))) {
+                $englishName .= 'us';
+            }
             $row = \Model\Ridunshe\Pages::instance()->queryRowBase(array('english_name' => $englishName, 'status' => 1), 'name,english_name,content');
             if (empty($row)) {
                 throw new \RpcBusinessException('页面不存在');
