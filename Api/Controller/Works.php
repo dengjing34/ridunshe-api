@@ -15,6 +15,7 @@ class Controller_Works extends Controller_Base
             if (empty($row)) {
                 throw new \RpcBusinessException('作品不存在');
             }
+            $row['category_en'] = strtoupper($row['category_en'] . ' ' . 'design');
             $row['pic'] = \Config\StaticFile::staticUrl($row['pic']);
             $row['content'] = \Config\StaticFile::replaceUrl($row['content']);
             $this->responseSuccess($row);
