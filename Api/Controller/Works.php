@@ -11,7 +11,7 @@ class Controller_Works extends Controller_Base
             if (!ctype_digit((string)$id) || !$id) {
                 throw new \RpcBusinessException('无效的作品ID');
             }
-            $row = \Model\Ridunshe\Works::instance()->queryRowBase(array('id' => $id), 'id,title,sub_title,area,year,intro,pic,content');
+            $row = \Model\Ridunshe\Works::instance()->queryRowBase(array('id' => $id), 'id,title,sub_title,category_en,area,year,intro,pic,content');
             if (empty($row)) {
                 throw new \RpcBusinessException('作品不存在');
             }
